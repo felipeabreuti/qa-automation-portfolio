@@ -6,6 +6,7 @@ import { userFlow } from './src/scenarios.js';
 export const options = {
   stages: config.stages,
   thresholds: config.thresholds,
+  summaryTrendStats: ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)', 'p(99)'],
 };
 
 export default function () {
@@ -14,9 +15,8 @@ export default function () {
 
 export function handleSummary(data) {
   return {
-    'report/summary.html': htmlReport(data),
-    'report/summary.json': JSON.stringify(data, null, 2),
+    [`evidence/summary-${config.profile}.html`]: htmlReport(data),
+    [`evidence/summary-${config.profile}.json`]: JSON.stringify(data, null, 2),
     stdout: textSummary(data, { indent: ' ', enableColors: true }),
   };
 }
-
