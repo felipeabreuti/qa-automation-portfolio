@@ -1,0 +1,297 @@
+{
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)",
+      "p(99)"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": false
+  },
+  "state": {
+    "testRunDurationMs": 303636.649,
+    "isStdOutTTY": false,
+    "isStdErrTTY": false
+  },
+  "metrics": {
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 3279486,
+        "rate": 10800.692244499116
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 6230,
+        "rate": 20.517944788674047
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 271.49243,
+        "avg": 183.1944707062602,
+        "min": 139.424,
+        "med": 165.09699999999998,
+        "max": 465.012,
+        "p(90)": 246.9892,
+        "p(95)": 256.8625
+      },
+      "thresholds": {
+        "p(95)<400": {
+          "ok": true
+        },
+        "p(99)<800": {
+          "ok": true
+        }
+      }
+    },
+    "ratings_duration": {
+      "contains": "time",
+      "values": {
+        "p(99)": 181.13532999999998,
+        "avg": 149.31119197431707,
+        "min": 139.424,
+        "med": 147.7175,
+        "max": 358.222,
+        "p(90)": 153.609,
+        "p(95)": 157.5591
+      },
+      "thresholds": {
+        "p(95)<250": {
+          "ok": true
+        }
+      },
+      "type": "trend"
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 271.49243,
+        "avg": 183.1944707062602,
+        "min": 139.424,
+        "med": 165.09699999999998,
+        "max": 465.012,
+        "p(90)": 246.9892,
+        "p(95)": 256.8625
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 1.2316440609951846,
+        "min": 0,
+        "med": 0,
+        "max": 167.035,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 0
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 2,
+        "min": 2,
+        "max": 100
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 12460,
+        "rate": 41.035889577348094
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.024,
+        "med": 0.102,
+        "max": 25.713,
+        "p(90)": 0.188,
+        "p(95)": 0.231,
+        "p(99)": 0.3674099999999999,
+        "avg": 0.12123451043338751
+      }
+    },
+    "vus_max": {
+      "contains": "default",
+      "values": {
+        "value": 100,
+        "min": 100,
+        "max": 100
+      },
+      "type": "gauge"
+    },
+    "http_req_receiving": {
+      "contains": "time",
+      "values": {
+        "avg": 0.2305929373996783,
+        "min": 0.01,
+        "med": 0.045,
+        "max": 78.949,
+        "p(90)": 0.108,
+        "p(95)": 0.142,
+        "p(99)": 6.4492499999999975
+      },
+      "type": "trend"
+    },
+    "http_req_failed": {
+      "thresholds": {
+        "rate<0.01": {
+          "ok": true
+        }
+      },
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 12460
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 2.4146804975924017,
+        "min": 0,
+        "med": 0.001,
+        "max": 314.844,
+        "p(90)": 0.001,
+        "p(95)": 0.001,
+        "p(99)": 0.005
+      }
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 1.1813844301765657,
+        "min": 0,
+        "med": 0,
+        "max": 158.001,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 0
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 22027135,
+        "rate": 72544.38840813318
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 6088.88453718,
+        "avg": 4372.685304806883,
+        "min": 2373.829458,
+        "med": 4375.193417,
+        "max": 6365.57925,
+        "p(90)": 5472.1733455,
+        "p(95)": 5741.74417865
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 164.6365,
+        "max": 464.894,
+        "p(90)": 246.5238,
+        "p(95)": 256.4792,
+        "p(99)": 270.29975,
+        "avg": 182.84264325842648,
+        "min": 119.542
+      }
+    },
+    "recommendation_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 217.07774943820158,
+        "min": 155.908,
+        "med": 216.77550000000002,
+        "max": 465.012,
+        "p(90)": 256.5487,
+        "p(95)": 262.5596,
+        "p(99)": 280.65562
+      },
+      "thresholds": {
+        "p(95)<400": {
+          "ok": true
+        }
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 24920,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>0.99": {
+          "ok": true
+        }
+      }
+    }
+  },
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [],
+    "checks": [
+        {
+          "name": "POST /api/pizza status 200",
+          "path": "::POST /api/pizza status 200",
+          "id": "8f4a892ff150ea67253d234403f9afb3",
+          "passes": 6230,
+          "fails": 0
+        },
+        {
+          "id": "b2276565fc247fed21c0835ceeab3d4b",
+          "passes": 6230,
+          "fails": 0,
+          "name": "POST /api/pizza retorna pizza",
+          "path": "::POST /api/pizza retorna pizza"
+        },
+        {
+          "passes": 6230,
+          "fails": 0,
+          "name": "GET /api/ratings status 200",
+          "path": "::GET /api/ratings status 200",
+          "id": "1f024f17e1bc22d54abba05d1ab91ba6"
+        },
+        {
+          "name": "GET /api/ratings tem corpo",
+          "path": "::GET /api/ratings tem corpo",
+          "id": "3b26c9962504b75432f8678c48c950fd",
+          "passes": 6230,
+          "fails": 0
+        }
+      ]
+  }
+}
