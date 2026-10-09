@@ -1,0 +1,39 @@
+name: QA Automation Suite
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      load_profile:
+        description: Perfil do teste de carga
+        type: choice
+        options: [smoke, load]
+        default: smoke
+
+permissions:
+  contents: read
+
+jobs:
+  load:
+    runs-on: ubuntu-latest
+    env:
+      PROFILE: ${{ inputs.load_profile || 'smoke' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+        with:
+          k6-version: 2.3.0
+
+      - name: Run load test
+        run: cd tests-load && k6 run -e PROFILE=$PROFILE load-test.js
+
+      - name: Upload load report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: load-k6-report-${{ env.PROFILE }}
+          path: tests-load/evidence/summary-${{ env.PROFILE }}.*
