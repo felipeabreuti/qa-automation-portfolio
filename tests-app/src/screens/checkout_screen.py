@@ -1,6 +1,9 @@
 from data.checkout import PersonalInfo
 from locators.checkout_locators import (
+    COMPLETE_SCREEN,
+    COMPLETE_TITLE_TEXT,
     CONTINUE_BUTTON,
+    FINISH_BUTTON,
     FIRST_NAME_INPUT,
     INFORMATION_SCREEN,
     LAST_NAME_INPUT,
@@ -26,3 +29,13 @@ class CheckoutScreen(BaseScreen):
 
     def is_overview_loaded(self) -> bool:
         return self._is_visible(OVERVIEW_SCREEN)
+
+    def finish_order(self):
+        self._step('Finaliza o pedido no resumo')
+        self._click(FINISH_BUTTON)
+
+    def is_complete_loaded(self) -> bool:
+        return self._is_visible(COMPLETE_SCREEN)
+
+    def confirmation_title(self) -> str:
+        return self._text(COMPLETE_TITLE_TEXT)
