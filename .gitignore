@@ -1,4 +1,9 @@
 .env
 .DS_Store
 
+tests-app/.venv/
+tests-app/app/
+.pytest_cache/
+__pycache__/
+
 tests-load/evidence/summary-smoke.*
