@@ -6,4 +6,9 @@ tests-app/app/
 .pytest_cache/
 __pycache__/
 
+tests-api/target/
+tests-api/.allure/
+tests-api/evidence/*
+!tests-api/evidence/index.html
+
 tests-load/evidence/summary-smoke.*

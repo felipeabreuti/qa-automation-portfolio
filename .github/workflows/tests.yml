@@ -15,6 +15,34 @@ permissions:
   contents: read
 
 jobs:
+  api:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: tests-api/pom.xml
+
+      - name: Run API tests
+        run: cd tests-api && ./mvnw test
+
+      - name: Generate API report
+        if: always()
+        run: cd tests-api && ./mvnw allure:report
+
+      - name: Upload API report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: api-allure-report
+          path: tests-api/evidence
+
   mobile:
     runs-on: ubuntu-24.04
     # Consome minutos do plano BrowserStack: só em PR do próprio repo ou disparo manual; forks não recebem secrets
