@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   mobile:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Consome minutos do plano BrowserStack: só em PR do próprio repo ou disparo manual; forks não recebem secrets
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
     concurrency:
@@ -51,7 +51,7 @@ jobs:
           path: tests-app/evidence
 
   load:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       PROFILE: ${{ inputs.load_profile || 'smoke' }}
     steps:
