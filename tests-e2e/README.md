@@ -19,7 +19,7 @@ Para ver o browser: `npm run test:headed`. Para abrir o relatório: `npm run tes
 
 ## Última execução
 
-15/11/2026, local: 8 testes, 8 passaram. O relatório fica em [evidence/](evidence/index.html), com um screenshot da tela final de cada teste. Quando um teste falha, o trace completo também vai para o relatório.
+16/11/2026, local: 8 testes, 8 passaram. O relatório fica em [evidence/](evidence/index.html), com um screenshot da tela final de cada teste. Quando um teste falha, o trace completo também vai para o relatório.
 
 ## O que está coberto
 

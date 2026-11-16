@@ -15,7 +15,7 @@ No Windows, use `mvnw.cmd`. Para apontar para outro ambiente: `BASE_URL=http://l
 
 ## Última execução
 
-15/10/2026, local: 13 testes, 13 passaram. O relatório está em [evidence/index.html](evidence/index.html) (arquivo único, abre direto no navegador). Cada teste tem o request e o response anexados.
+16/11/2026, local: 13 testes, 13 passaram com `./mvnw clean test`. O relatório está em [evidence/index.html](evidence/index.html) (arquivo único, abre direto no navegador). Cada teste tem o request e o response anexados.
 
 ## O que está coberto
 
