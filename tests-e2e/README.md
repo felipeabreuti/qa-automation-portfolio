@@ -11,7 +11,7 @@ Node.js 24, a mesma versão usada no CI. O Playwright exige Node.js 20 ou superi
 ```bash
 cd tests-e2e
 npm ci
-npx playwright install --with-deps chromium
+npx playwright install chromium
 npm test
 ```
 
