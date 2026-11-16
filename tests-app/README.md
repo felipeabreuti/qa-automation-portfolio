@@ -35,7 +35,7 @@ O "YOU ORDER" é o texto do próprio app.
 
 ## Resultado
 
-Última execução (09/10/2026): 3 testes, 3 passaram, no Google Pixel 8 com Android 14.
+Última execução (16/11/2026): 3 testes, 3 passaram, no Google Pixel 8 com Android 14.
 
 - [report.html](evidence/report.html), com o log das etapas, screenshot da tela final e o link da sessão no BrowserStack (vídeo e logs do device)
 

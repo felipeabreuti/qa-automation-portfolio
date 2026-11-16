@@ -14,5 +14,3 @@ tests-api/evidence/*
 tests-e2e/node_modules
 tests-e2e/test-results/
 tests-e2e/playwright-report/
-
-tests-load/evidence/summary-smoke.*
