@@ -43,6 +43,38 @@ jobs:
           name: api-allure-report
           path: tests-api/evidence
 
+  e2e:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: tests-e2e
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: tests-e2e/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E tests
+        run: npm test
+
+      - name: Upload E2E report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-playwright-report
+          path: tests-e2e/evidence
+
   mobile:
     runs-on: ubuntu-24.04
     # Consome minutos do plano BrowserStack: só em PR do próprio repo ou disparo manual; forks não recebem secrets
