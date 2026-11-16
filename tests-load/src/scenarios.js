@@ -7,6 +7,21 @@ function thinkTime(minSeconds, maxSeconds) {
   sleep(minSeconds + Math.random() * (maxSeconds - minSeconds));
 }
 
+function hasPizzaName(response) {
+  if (response.status !== 200 || !response.body) {
+    return false;
+  }
+
+  try {
+    return response.json('pizza.name') !== undefined;
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return false;
+    }
+    throw error;
+  }
+}
+
 const authHeaders = {
   headers: { 'Content-Type': 'application/json', 'Authorization': config.authHeader },
 };
@@ -28,7 +43,7 @@ export function userFlow() {
 
   check(recommendationRes, {
     'POST /api/pizza status 200': (r) => r.status === 200,
-    'POST /api/pizza retorna pizza': (r) => r.json('pizza.name') !== undefined,
+    'POST /api/pizza retorna pizza': hasPizzaName,
   });
 
   thinkTime(1, 3);
