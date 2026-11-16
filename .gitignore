@@ -11,7 +11,7 @@ tests-api/.allure/
 tests-api/evidence/*
 !tests-api/evidence/index.html
 
-tests-e2e/node_modules/
+tests-e2e/node_modules
 tests-e2e/test-results/
 tests-e2e/playwright-report/
 
